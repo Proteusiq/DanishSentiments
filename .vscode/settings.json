@@ -1,0 +1,6 @@
+{
+    "python.formatting.provider": "black", 
+    
+    "python.venvPath":"/users/danpra/.virtualenvs"
+    
+}

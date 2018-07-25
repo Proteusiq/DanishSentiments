@@ -1,5 +1,31 @@
 import re
+# For our Timer decorator
+from datetime import datetime
+import humanfriendly
+
+# For our ML
 from sklearn.base import TransformerMixin
+
+def time_me(function):
+    '''
+    Outputs function execution time in humanized form
+    Starts at Seconds level
+    '''
+    def wrapper(*args,**kwargs):
+        '''
+        returns functions output if any
+        '''
+        u = datetime.now() # Start time
+        f_return = function(*args,**kwargs)
+        v = datetime.now() # End time
+
+        delta = v - u
+        print('Execution Time: {}'.format(
+            humanfriendly.format_timespan(delta.seconds))
+            )
+        return f_return #Return function contents
+    return wrapper
+
 
 class DanishCleaner(TransformerMixin):
     '''
@@ -54,7 +80,7 @@ class DanishCleaner(TransformerMixin):
                 stemmer = Stemmer.Stemmer('danish')
                 clean_text = clean_text.apply(lambda x: ' '.join(stemmer.stemWords(x.split())))
             except ModuleNotFoundError:
-                print('Stemmer is not found. Try "pip install Stemmer"')
+                print('Stemmer is not found. Try "pip install pystemmer"')
                 print('Words not normalize')
                 pass #Continue with issue
         
@@ -116,7 +142,7 @@ def token(X,
             return clean_text.split()
         
 # Summary of steps
-
+@time_me
 def load_data(path_to_file, seed=7, balanced=True):
     import pandas as pd
     import numpy as np
@@ -156,13 +182,15 @@ def show_most_informative_features(feature_names, clf, n=1000):
         
 
 # Show me some stats
+@time_me
 def show_diagram(trained_clf, X_train, y_train, X_test, y_test, compare_test=True):
     import matplotlib.pyplot as plt
     from sklearn.metrics import roc_curve, auc, classification_report
     
     print('Classification Report')
     print('\t','_'*45)
-    print(classification_report(y_test, trained_clf.predict(X_test),target_names=['Negative','Positive']))
+    print(classification_report(y_test,
+             trained_clf.predict(X_test),target_names=['Negative','Positive']))
     
     print('\t','_'*45,'\n'*2)
     

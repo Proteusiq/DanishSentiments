@@ -10,6 +10,7 @@ pystemmer = "*"
 jupyter = "*"
 seaborn = "*"
 requests = "*"
+humanfriendly = "*"
 
 [dev-packages]
 

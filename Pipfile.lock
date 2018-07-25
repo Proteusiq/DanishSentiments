@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3fc2805e45544d24cf525d5b51b775ac35b822a8188f3d2390d818bacd3f616f"
+            "sha256": "2d6c55224c19dd88c238401d0493675938bec55ffb434cd691092294922fd7d0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -80,6 +80,14 @@
                 "sha256:66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736"
             ],
             "version": "==1.0.1"
+        },
+        "humanfriendly": {
+            "hashes": [
+                "sha256:49196aaebc41a73106256bf2dce468452e8cf2f12b73eb54b50c25fbc1644363",
+                "sha256:ed1e98ae056b597f15b41bddcc32b9f21e6ab4f3445f9faad1668675de759f7b"
+            ],
+            "index": "pypi",
+            "version": "==4.16.1"
         },
         "idna": {
             "hashes": [
@@ -371,6 +379,13 @@
                 "sha256:fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010"
             ],
             "version": "==2.2.0"
+        },
+        "pyreadline": {
+            "hashes": [
+                "sha256:4530592fc2e85b25b1a9f79664433da09237c1a270e4d78ea5aa3a2c7229e2d1"
+            ],
+            "markers": "sys_platform == 'win32'",
+            "version": "==2.1"
         },
         "pystemmer": {
             "hashes": [
