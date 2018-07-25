@@ -108,3 +108,8 @@ venv.bak/
 *.pkl
 # Ignore checkpoints
 /notebook/*checkpoints/*
+
+# Ignore vs code settings
+
+/.vscode/*
+/.vscode
