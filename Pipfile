@@ -11,6 +11,7 @@ jupyter = "*"
 seaborn = "*"
 requests = "*"
 humanfriendly = "*"
+flask = "*"
 
 [dev-packages]
 
