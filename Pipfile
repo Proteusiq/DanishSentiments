@@ -12,6 +12,7 @@ seaborn = "*"
 requests = "*"
 humanfriendly = "*"
 flask = "*"
+wtforms = "*"
 
 [dev-packages]
 
