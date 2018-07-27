@@ -55,12 +55,12 @@ You are good to go :)
 
 ### Pending Documentation ...
 
-N.B: This project was build in Python 3.6, and uses f-formating, that might cause issues with lower Python version. lover python version will throw:
+N.B: This project was build in Python 3.6, and uses f-formating, that might cause issues with lower Python version. lower python version will throw:
 
 ##### SyntaxError ERROR
 ``` f'Positive: With {pos_proba:.1%} Probability'```
  
-If you would like to use lower Python version, just git clone the project and change f-formating string to normal
+If you want to use lower Python version, just git clone the project and change f-formating string to normal
 .format() e.g.
 ```'Positive: With {:.1%} Probability'.format(pos_proba)```
 
