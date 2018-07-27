@@ -12,6 +12,11 @@ Make sure you have pipenv. If you do not. you can get it via pip install (pip --
 ```bash
 pip install --user pipenv
 ```
+add pipenv to you path:e.g on Windows you would do
+```
+SETX PATH "%PATH%;%APPDATA%\python\python36\scripts"
+```
+restart the terminal. 
 
 Clone this repository and enter the project folder: e.g.
 
