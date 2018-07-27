@@ -58,5 +58,12 @@ If you would like to use lower Python version, just git clone the project and ch
 .format() e.g.
 ```'Positive: With {:.1%} Probability'.format(pos_proba)```
 
+### TODO:
+- Gather users input for model retraining
+- Rewrite the flask_app to actually do what it is suppose to do
+- Grid search better parameter for partial_fit models
+- A better tokenizer (remove places and peoples names)
+- Clean code everywhere :)
+
 
 
