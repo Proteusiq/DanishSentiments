@@ -3,6 +3,11 @@ PyData CPH: Talk on Building and Deploying Danish Sentiment Model (26-07-2017) a
 
 #### How-tos & Requirements
 
+Make sure you have pipenv. If you do not. you can get it via pip install (pip --version has has to be >= 9.0.1)
+```bash
+pip install --user pipenv
+```
+
 Clone this repository and enter the project folder: e.g.
 
 ``` bash
@@ -11,10 +16,6 @@ cd DanishSentiments
 pipenv install
 pipen shell
 
-```
-If you do not have pipenv. you can get it with pip (pip --version has has to be >= 9.0.1)
-```bash
-pip install --user pipenv
 ```
 
 To run jupyter tools, e.g. jupyter lab
