@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/14926709/43322711-be0344a6-91af-11e8-83ca-2aa47ab5700f.png)
+
 # Building Danish Sentiments
 PyData CPH: Talk on Building and Deploying Danish Sentiment Model (26-07-2017) at GiG
 
