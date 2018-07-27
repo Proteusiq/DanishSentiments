@@ -6,12 +6,13 @@ PyData CPH: Talk on Building and Deploying Danish Sentiment Model (26-07-2017) a
 Clone this repository and enter the project folder: e.g.
 
 ``` bash
-git clone https://github.com/Proteusiq/DanishSentiments.git && cd DanishSentiments
+git clone https://github.com/Proteusiq/DanishSentiments.git
+cd DanishSentiments
 pipenv install
 pipen shell
 
 ```
-If you do not have pipenv. you can get it with (pip --version has has to be >= 9.0.1
+If you do not have pipenv. you can get it with pip (pip --version has has to be >= 9.0.1)
 ```bash
 pip install --user pipenv
 ```
@@ -22,13 +23,13 @@ To run jupyter tools, e.g. jupyter lab
 jupyter lab
 ```
 
-In order to run the flask_app, you need to train, **SGD_LogRG.ipynb** located on notebooks folder, that will generate HashBectorizer.pkl and SGDClassifier.pkl. Training takes less that 6 minutes on Windows 10, 64bit 16GB RAM.
+In order to run the flask_app, you need to train the SGDClassifier by running **SGD_LogRG.ipynb** located on notebooks folder. This will generate HashBectorizer.pkl and SGDClassifier.pkl. Training takes less that 6 minutes on Windows 10, 64bit 16GB RAM.
 
 To do so, assuming you have jupyter lab running,
 - navigate to notebooks and select SGD_LogRG.ipynb
 - Next to File Edit View is Run. Click and select Run All Cells
 
-If everying when well, you have generated HashVectorizer.pkl and SGDClassifier.pkl
+If everying went well, you have generated HashVectorizer.pkl and SGDClassifier.pkl
 
 You can press Ctrl(Command) + C to exit jupyter lab and back to your terminal: Type
 
