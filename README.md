@@ -1,6 +1,9 @@
 # Building Danish Sentiments
 PyData CPH: Talk on Building and Deploying Danish Sentiment Model (26-07-2017) at GiG
 
+##Disclaimers
+This project is far from being done (mostly the flask apps). It is intended for academic and fun reasons only. It is not my fault, if you mess something up :)
+
 #### How-tos & Requirements
 
 Make sure you have pipenv. If you do not. you can get it via pip install (pip --version has has to be >= 9.0.1)
