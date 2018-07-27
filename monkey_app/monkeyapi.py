@@ -7,7 +7,7 @@ from sklearn.externals import joblib
 clf = joblib.load('../SGDclassifier.pkl')
 hash_vec = joblib.load('../HashVectorizer.pkl')
 
-from flask import (Flask, request,
+from flask import (Flask, request, make_response,
                      Response, jsonify, json)
 
 app = Flask(__name__)
@@ -32,14 +32,17 @@ def api_go():
         z_ = f'Positive Probability: {z[0][1]:.2%}'    
         send = {'predict':response, 'probability':z_}
 
-        print(send)
+        
         
         dumped_sent = json.dumps(send)
-        r = jsonify(dumped_sent)
+        # r = jsonify(dumped_sent)
 
-        r.status_code = 200
+        # r.status_code = 200
+        response = make_response(dumped_sent)
+        response.headers['content-type'] = 'application/json'
+        response.
 
-        return r
+        return response
 
     else:
         return 'Nothing to respond :)'

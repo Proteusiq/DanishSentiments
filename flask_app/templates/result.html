@@ -23,7 +23,7 @@
             <h2>Sentiment Message</h2>
             <p>{{in_review}}</p>
         </div>
-        <form method="post" action="{{ url_for('result') }}">
+        <form method="post" action="{{ url_for('submit') }}">
             <div class="form-group">
                 <label for="Review">Scored</label>
                 <p>{{in_response}}</p>
@@ -31,7 +31,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Yes</button>
-            <button type="submit" class="btn btn-primary">No</button>
+            <button type="submit" class="btn btn-primary">No </button>
         </form>
 </body>
 </div>
