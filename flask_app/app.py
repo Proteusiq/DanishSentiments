@@ -33,16 +33,20 @@ def home():
     
     return render_template('home.html')
 
+
 @app.route('/submit', methods=['POST','GET'])
 def submit():
-    print('We are here ..')
-
-    try:
-        return render_template('result.html', in_review=review,in_response='Positive')
-    except NameError:
-        #There is no text so redirect to home
-        print('Nothing here, going home')
-        return redirect(url_for('home'), code=307)
+    count = 0
+    print('We are here ..',count)
+    count+=1
+    if request.method == 'POST':
+        try:
+            return render_template('result.html', in_review=review,in_response='Positive')
+        except NameError:
+            #There is no text so redirect to home
+            print('Nothing here, going home')
+            return redirect(url_for('home'), code=307)
+    print('Not a Post Request')
 
 
 if __name__ == '__main__':
