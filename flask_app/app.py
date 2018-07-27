@@ -9,9 +9,6 @@ from sklearn.externals import joblib
 clf = joblib.load('../SGDclassifier.pkl')
 hash_vec = joblib.load('../HashVectorizer.pkl')
 
-# X = hash_vec.transform(['jeg elsker pizze'])
-# y = clf.predict_proba(X)
-# print(X,y,clf.classes_)
 
 ## load stops tokenize and model
 app = Flask(__name__)
@@ -36,12 +33,20 @@ def home():
 
 @app.route('/submit', methods=['POST','GET'])
 def submit():
-    count = 0
-    print('We are here ..',count)
-    count+=1
+   
     if request.method == 'POST':
         try:
-            return render_template('result.html', in_review=review,in_response='Positive')
+            X = hash_vec.transform([review])
+            y = clf.predict_proba(X)
+
+            neg_proba,pos_proba = y[0][0],y[0][1]
+
+            if pos_proba > .5:
+                message = f'Positive: With {pos_proba:.1%} Probability'
+            else:
+                message = f'Negative: With {neg_proba:.1%} Probability'
+
+            return render_template('result.html', in_review=review,in_response=message)
         except NameError:
             #There is no text so redirect to home
             print('Nothing here, going home')

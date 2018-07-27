@@ -3,13 +3,13 @@
             <h2>Sentiment Message</h2>
             <p>{{in_review}}</p>
         </div>
-        <form method="post" action="{{ url_for('submit') }}">
+        <form method="post" action="{{ url_for('home') }}">
             <div class="form-group">
                 <label for="Review">Scored</label>
                 <p>{{in_response}}</p>
                 <small class="form-text text-muted">Did we get it right?.</small>
             </div>
-
-            <button type="submit" class="btn btn-primary" value="yes">Yes</button>
-            <button type="submit" class="btn btn-primary">No </button>
+            <button type="submit" class="btn btn-primary" name="response_button" value="yes">Yes</button>
+            <button type="submit" class="btn btn-primary" name="response_button" value="no">No </button>
+        </form>
  {% endblock content %}
