@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0, '../notebooks/')
 from flask import (Flask, render_template,
-                     request)
+                     request, redirect, url_for)
 from sklearn.externals import joblib
 
 
@@ -9,8 +9,8 @@ from sklearn.externals import joblib
 clf = joblib.load('../SGDclassifier.pkl')
 hash_vec = joblib.load('../HashVectorizer.pkl')
 
-X = hash_vec.transform(['jeg elsker pizze'])
-y = clf.predict_proba(X)
+# X = hash_vec.transform(['jeg elsker pizze'])
+# y = clf.predict_proba(X)
 # print(X,y,clf.classes_)
 
 ## load stops tokenize and model
@@ -18,8 +18,18 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    global review
-    review = request.form['review']
+    try:
+        global review
+        review = request.form['review']
+
+        if review:
+            return redirect(url_for('submit'), code=307)
+        else:
+            print('Nothing here')
+    except KeyError:
+        #wait to get the review input
+        print('KeyError: Waiting for')
+        pass
     
     return render_template('home.html')
 
