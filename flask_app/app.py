@@ -5,12 +5,10 @@ from flask import (Flask, render_template,
 from sklearn.externals import joblib
 
 
-
+## load stops tokenize and model
 clf = joblib.load('../SGDclassifier.pkl')
 hash_vec = joblib.load('../HashVectorizer.pkl')
 
-
-## load stops tokenize and model
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
