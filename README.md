@@ -12,7 +12,7 @@ Make sure you have pipenv. If you do not, you can get it via pip install (pip --
 ```bash
 pip install --user pipenv
 ```
-add pipenv to your path:e.g on Windows, you would do
+add pipenv to your path: e.g on Windows, you would do
 ```
 SETX PATH "%PATH%;%APPDATA%\python\python36\scripts"
 ```
@@ -44,7 +44,7 @@ Back to our current model! :) Assuming you have _jupyter lab_ running,
 
 If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been generated and will be used by our flask apps.
 
-You can press Ctrl(Command) + C to exit jupyter lab and back to your shell terminal: Type
+Head back to terminal. You can press Ctrl(Command) + C to exit jupyter lab server. On your shell terminal: Execute:
 
 ```bash
 cd flask_app
