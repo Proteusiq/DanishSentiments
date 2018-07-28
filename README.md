@@ -18,7 +18,7 @@ SETX PATH "%PATH%;%APPDATA%\python\python36\scripts"
 ```
 restart the terminal. 
 
-Clone this repository and enter the project folder and pipenv install packages:
+Clone this repository, and enter the project folder. Execute _pipenv install_ to install all packages.
 
 ``` bash
 git clone https://github.com/Proteusiq/DanishSentiments.git
@@ -28,7 +28,7 @@ pipenv shell
 
 ```
 
-In pipenv shell, you can run jupyter tools, e.g. jupyter lab
+_pipenv shell_ activates our environment. In pipenv shell, you can run jupyter tools, that comes as part of the package, e.g. _jupyter lab_
 
 ```bash
 jupyter lab
@@ -36,20 +36,29 @@ jupyter lab
 
 In order to run the flask_app, you need to train the SGDClassifier by running **SGD_LogRG.ipynb** located in notebooks folder. This will generate HashVectorizer.pkl and SGDClassifier.pkl. Training takes less than 2 minutes on Windows 10, 64bit 16GB RAM.
 
-To do so, assuming you have jupyter lab running,
-- navigate to notebooks and select SGD_LogRG.ipynb
+Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
+
+Back to our current model! :) Assuming you have _jupyter lab_ running,
+- navigate to notebooks folder and select SGD_LogRG.ipynb. This notebook contents a simple Stochastic Gradient Descent Classifier.
 - Next to File Edit View is Run. Click and select Run All Cells
 
-If everying went well, HashVectorizer.pkl and SGDClassifier.pkl would have been generated.
+If everything went well, HashVectorizer.pkl and SGDClassifier.pkl would have been generated.
 
 You can press Ctrl(Command) + C to exit jupyter lab and back to your shell terminal: Type
 
 ```bash
 cd flask_app
-python appy.py
+python app.py
 ```
 
 You are good to go :) Flask app should be running on port 5000. On your browser, head to localhost:5000.
+This project is under development. To get current version, use:
+
+```bash
+git pull
+```
+
+,here and there, to get the current version.
 
 ## Structure
 - Data Gathering, Exploration and Cleaning(EDA_Sentiment.ipynb)
