@@ -1,3 +1,9 @@
+'''
+ This is how not to code flasks app :) I have just chicken around
+ to produce a simple flask app for the model :). A clean and more
+ thoughtful app is coming soon ...
+'''
+
 import sys
 sys.path.insert(0, '../notebooks/')
 from flask import (Flask, render_template,
