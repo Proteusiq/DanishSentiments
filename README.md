@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/14926709/43322711-be0344a6-91af-11e8-83ca-2aa47ab5700f.png)
 
 # Building Danish Sentiment Models
-PyData CPH: Talk on Building and Deploying Danish Sentiment Model (26-07-2017) at GiG
+[PyData CPH](https://www.meetup.com/PyData-Copenhagen/): Talk on Building and Deploying Danish Sentiment Model (26-07-2017) at GiG
 
 ## Disclaimers
 This project is far from being done (mostly the flask apps). It is intended for academic reason only. It is not my fault, if you mess something up on your machine :). There exists typos everywhere, do point them out.
@@ -62,7 +62,7 @@ git pull
 
 ## Structure
 - Data Gathering, Exploration and Cleaning([EDA_Sentiment.ipynb](./notebooks/EDA_Sentiment.ipynb))
-- Finding simple Logit model that is fast and retrainable
+- Finding simple logit model that is fast and re-trainable
 - Serve the model to the outside world via Flask app and api
 - Build database to store users input for model retraining.
 
