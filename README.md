@@ -34,7 +34,7 @@ In pipenv shell, you can run jupyter tools, e.g. jupyter lab
 jupyter lab
 ```
 
-In order to run the flask_app, you need to train the SGDClassifier by running **SGD_LogRG.ipynb** located in notebooks folder. This will generate HashVectorizer.pkl and SGDClassifier.pkl. Training takes less than 6 minutes on Windows 10, 64bit 16GB RAM.
+In order to run the flask_app, you need to train the SGDClassifier by running **SGD_LogRG.ipynb** located in notebooks folder. This will generate HashVectorizer.pkl and SGDClassifier.pkl. Training takes less than 2 minutes on Windows 10, 64bit 16GB RAM.
 
 To do so, assuming you have jupyter lab running,
 - navigate to notebooks and select SGD_LogRG.ipynb
