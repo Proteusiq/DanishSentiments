@@ -52,7 +52,8 @@ python app.py
 ```
 
 You are good to go :) Flask app should be running on port 5000. On your browser, head to localhost:5000.
-This project is under development. To get current version, use:
+
+**NB:**This project is under development. To get current version, use:
 
 ```bash
 git pull
