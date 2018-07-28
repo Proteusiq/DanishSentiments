@@ -39,7 +39,7 @@ In order to run the flask_app, you need to train the SGDClassifier by running [*
 Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
 
 Back to our current model! :) Assuming you have _jupyter lab_ running,
-- navigate to notebooks folder and select SGD_LogRG.ipynb. This notebook contents a simple Stochastic Gradient Descent Classifier.
+- navigate to notebooks folder and select SGD_LogRG.ipynb. This notebook contents a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification).
 - Next to File Edit View is Run. Click and select Run All Cells
 
 If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been generated and will be used by our flask apps.
@@ -61,7 +61,7 @@ git pull
 ,here and there, to get the current version.
 
 ## Structure
-- Data Gathering, Exploration and Cleaning(EDA_Sentiment.ipynb)
+- Data Gathering, Exploration and Cleaning([EDA_Sentiment.ipynb](./notebooks/EDA_Sentiment.ipynb))
 - Finding simple Logit model that is fast and retrainable
 - Serve the model to the outside world via Flask app and api
 - Build database to store users input for model retraining.
@@ -70,7 +70,7 @@ git pull
 
 ### Pending Documentation ...
 
-N.B: This project was build in Python 3.6, and uses f-formating, that might cause issues with lower Python version. lower python version will throw:
+N.B: This project was build in Python 3.6, and uses _f-formating_, that might cause issues with lower Python version. lower python version will throw:
 
 ##### SyntaxError ERROR
 ``` f'Positive: With {pos_proba:.1%} Probability'```
