@@ -34,7 +34,7 @@ _pipenv shell_ activates our environment. In pipenv shell, you can run jupyter t
 jupyter lab
 ```
 
-In order to run the flask_app, you need to train the SGDClassifier by running **SGD_LogRG.ipynb** located in notebooks folder. This will generate HashVectorizer.pkl and SGDClassifier.pkl. Training takes less than 2 minutes on Windows 10, 64bit 16GB RAM.
+In order to run the flask_app, you need to train the SGDClassifier by running [**SGD_LogRG.ipynb**](./notebooks/SGD_LogRg.ipynb) located in notebooks folder. This will generate _HashVectorizer.pkl_ and _SGDClassifier.pkl_ files. Training takes less than 2 minutes on Windows 10, 64bit 16GB RAM.
 
 Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
 
@@ -42,7 +42,7 @@ Back to our current model! :) Assuming you have _jupyter lab_ running,
 - navigate to notebooks folder and select SGD_LogRG.ipynb. This notebook contents a simple Stochastic Gradient Descent Classifier.
 - Next to File Edit View is Run. Click and select Run All Cells
 
-If everything went well, HashVectorizer.pkl and SGDClassifier.pkl would have been generated.
+If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been generated and will be used by our flask apps.
 
 You can press Ctrl(Command) + C to exit jupyter lab and back to your shell terminal: Type
 
@@ -85,6 +85,3 @@ If you want to use lower Python version, just git clone the project and change f
 - Grid search better parameter for partial_fit models
 - A better tokenizer (remove places and peoples names)
 - Clean code everywhere :)
-
-
-
