@@ -4,7 +4,7 @@
 PyData CPH: Talk on Building and Deploying Danish Sentiment Model (26-07-2017) at GiG
 
 ## Disclaimers
-This project is far from being done (mostly the flask apps). It is intended for academic reason only. It is not my fault, if you mess something up on your machine :). 
+This project is far from being done (mostly the flask apps). It is intended for academic reason only. It is not my fault, if you mess something up on your machine :). There exists typos everywhere, do point them out.
 
 ## How-tos & Requirement
 
@@ -55,7 +55,7 @@ You are good to go :) Flask app should be running on port 5000. On your browser,
 - Data Gathering, Exploration and Cleaning(EDA_Sentiment.ipynb)
 - Finding simple Logit model that is fast and retrainable
 - Serve the model to the outside world via Flask app and api
-- Build database to store uses input for model retraining.
+- Build database to store users input for model retraining.
 
 **Note:** app.py is running on debugging mode. This is to allow changes. If you want to put the model in production, make sure to set debugging to False.
 
