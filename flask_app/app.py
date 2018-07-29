@@ -19,6 +19,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
+
+    header = 'A Toy Danish Sentiment Analysis'
+    contents ='Write or paste a review and lets attempt to computes its sentiment'
     try:
         global review
         review = request.form['review']
@@ -26,13 +29,14 @@ def home():
         if review:
             return redirect(url_for('submit'), code=307)
         else:
+            
             print('Nothing here')
     except KeyError:
         #wait to get the review input
         print('KeyError: Waiting for')
         pass
     
-    return render_template('home.html')
+    return render_template('home.html', header=header, contents=contents)
 
 
 @app.route('/submit', methods=['POST','GET'])
@@ -50,7 +54,8 @@ def submit():
             else:
                 message = f'Negative: With {neg_proba:.1%} Probability'
 
-            return render_template('result.html', in_review=review,in_response=message)
+            return render_template('result.html',header='Sentiment Message:', 
+                                    contents=review,in_response=message)
         except NameError:
             #There is no text so redirect to home
             print('Nothing here, going home')
