@@ -40,7 +40,7 @@ Training data came from TrustPilot Reviews. I wrote a simple helper function [Tr
 
 Back to our current model! :) Assuming you have _jupyter lab_ running,
 - navigate to notebooks folder and select SGD_LogRG.ipynb. This notebook contents a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification).
-- Next to File Edit View is Run. Click and select Run All Cells
+- Next to File Edit View is Run. Click and select Run All Cells. Model score: 92%
 
 If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been generated and will be used by our flask apps.
 
