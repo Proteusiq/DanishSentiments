@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/14926709/43322711-be0344a6-91af-11e8-83ca-2aa47ab5700f.png)
 
 # Building Danish Sentiment Models
-[PyData CPH](https://www.meetup.com/PyData-Copenhagen/): Talk on Building and Deploying Danish Sentiment Model (26-07-2017) at GiG
+[PyData CPH](https://www.meetup.com/PyData-Copenhagen/): Talk on Building and Deploying Danish Sentiment Model (26-07-2018) at GiG
 
 ## Disclaimers
 This project is far from being done (mostly the flask apps). It is intended for academic reason only. It is not my fault, if you mess something up on your machine :). There exists typos everywhere, do point them out.
