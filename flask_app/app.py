@@ -18,6 +18,7 @@ hash_vec = joblib.load('../HashVectorizer.pkl')
 app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
+@app.route('/home', methods=['POST', 'GET'])
 def home():
 
     header = 'A Toy Danish Sentiment Analysis'
