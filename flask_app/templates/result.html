@@ -1,6 +1,6 @@
 {% extends "layout.html" %} 
 {% block content %}
-        <form method="post" action="{{ url_for('home') }}">
+        <form method="get" action="{{ url_for('response') }}">
             <div class="form-group">
                 <label for="Review">Scored</label>
                 <p>{{in_response}}</p>

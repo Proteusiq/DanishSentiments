@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block content %}
+<!--Get the content to contents_extra while gb_response to content-->
+<p>{{contents_extra}}</p>
+<form method="post" action="{{ url_for('home') }}">
+    <div class="form-group">
+        <label for="Review">Together</label>
+        <small class="form-text text-muted">We are Smarter</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Let's Do it Again</button>
+</form>
+{% endblock content %}

@@ -13,6 +13,7 @@ requests = "*"
 humanfriendly = "*"
 flask = "*"
 wtforms = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 
