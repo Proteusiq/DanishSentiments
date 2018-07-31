@@ -28,19 +28,14 @@ pipenv shell
 
 ```
 
-_pipenv shell_ activates our environment. In pipenv shell, you can run jupyter tools, that comes as part of the package, e.g. _jupyter lab_
-
-```bash
-jupyter lab
-```
 ## Model Training & Deployment
 In order to run the flask_app, you need to train the SGDClassifier by navigating to flask_app folder and run.
 ```bash
 cd flask_app
 python db_admin.py train
 ```
-This will train a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification). Model score: 92%. This will  Training takes less than 6 minutes on Windows 10, 64bit 16GB RAM.
- See [**SGD_LogRG.ipynb**](./notebooks/SGD_LogRg.ipynb) located in notebooks folder for step by step taken to train the model. 
+This will train a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification). Model score: 92%. Training takes less than 6 minutes on Windows 10, 64bit 16GB RAM.
+ 
 
 Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
 
@@ -55,7 +50,7 @@ python app.py
 
 You are good to go :) Flask app should be running on port 5000. On your browser, head to localhost:5000.
 
-**NB:**This project is under development. To get current version, use:
+*NB:*This project is under development. To get current version, use:
 
 ```bash
 git pull
