@@ -8,7 +8,7 @@ This project is far from being done (mostly the flask apps). It is intended for 
 
 ## How-tos & Requirement
 
-Make sure you have pipenv. If you do not, you can get it via pip install (pip --version has to be >= 9.0.1).
+Make sure you have pipenv and c++ compiler. If you do not, you can get it via pip install (pip --version has to be >= 9.0.1).
 ```bash
 pip install --user pipenv
 ```
@@ -33,21 +33,23 @@ _pipenv shell_ activates our environment. In pipenv shell, you can run jupyter t
 ```bash
 jupyter lab
 ```
-
-In order to run the flask_app, you need to train the SGDClassifier by running [**SGD_LogRG.ipynb**](./notebooks/SGD_LogRg.ipynb) located in notebooks folder. This will generate _HashVectorizer.pkl_ and _SGDClassifier.pkl_ files. Training takes less than 2 minutes on Windows 10, 64bit 16GB RAM.
+## Model Training & Deployment
+In order to run the flask_app, you need to train the SGDClassifier by navigating to flask_app folder and run.
+```bash
+cd flask_app
+python db_admin.py train
+```
+This will train a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification). Model score: 92%. This will  Training takes less than 6 minutes on Windows 10, 64bit 16GB RAM.
+ See [**SGD_LogRG.ipynb**](./notebooks/SGD_LogRg.ipynb) located in notebooks folder for step by step taken to train the model. 
 
 Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
 
-Back to our current model! :) Assuming you have _jupyter lab_ running,
-- navigate to notebooks folder and select SGD_LogRG.ipynb. This notebook contents a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification).
-- Next to File Edit View is Run. Click and select Run All Cells. Model score: 92%
 
 If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been generated and will be used by our flask apps.
 
-Head back to terminal. You can press Ctrl(Command) + C to exit jupyter lab server. On your shell terminal: Execute:
+On your shell terminal: Execute:
 
 ```bash
-cd flask_app
 python app.py
 ```
 
