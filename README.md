@@ -50,19 +50,18 @@ python app.py
 
 You are good to go :) Flask app should be running on port 5000. On your browser, head to localhost:5000.
 
-*NB:*This project is under development. To get current version, use:
+**NB:**This project is under development. To get current version, use:
 
 ```bash
 git pull
 ```
 
-,here and there, to get the current version.
-
 ## Structure
 - Data Gathering, Exploration and Cleaning([EDA_Sentiment.ipynb](./notebooks/EDA_Sentiment.ipynb))
-- Finding simple logit model that is fast and re-trainable
+- Finding simple logit model that is fast and continous-trainable
 - Serve the model to the outside world via Flask app and api
-- Build database to store users input for model retraining.
+- Model continous learning with users interaction.
+- Database to store users input for bulk model retraining.
 
 **Note:** app.py is running on debugging mode. This is to allow changes. If you want to put the model in production, make sure to set debugging to False.
 
