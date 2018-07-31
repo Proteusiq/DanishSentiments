@@ -83,7 +83,7 @@ def response():
             #print(gb_feed)
         elif user_response == 'no':
         
-            bad_list = ['Bumma!, I knew, I failed!',
+            bad_list = ['Bumma! I knew, I failed!',
                         'I fail 6% of times, you know',
                     'That was hard!', 'Wrong? Øv :(']
             gb_feed = secrets.choice(bad_list)

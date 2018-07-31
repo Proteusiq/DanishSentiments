@@ -115,4 +115,4 @@ venv.bak/
 /.vscode
 
 #ignore our data base
-*.db
+/flask_app/*.db
