@@ -8,7 +8,7 @@ This project is far from being done (mostly the flask apps). It is intended for 
 
 ## How-tos & Requirement
 
-Make sure you have pipenv and c++ compiler. If you do not, you can get it via pip install (pip --version has to be >= 9.0.1).
+Make sure you have pipenv. If you do not, you can get it via pip install (pip --version has to be >= 9.0.1).
 ```bash
 pip install --user pipenv
 ```
