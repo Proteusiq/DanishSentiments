@@ -17,15 +17,16 @@ hash_vec = joblib.load('../HashVectorizer.pkl')
 @app.route('/', methods=['POST', 'GET'])
 @app.route('/home', methods=['POST', 'GET'])
 def home():
-    workingdb = UserFeedBack.query.first()
-    print(workingdb.features)
+    
+    # workingdb = UserFeedBack.query.first()
+    # print(workingdb.features)
 
     header = 'A Toy Danish Sentiment Analysis'
     contents ='Write or paste a review and lets attempt to computes its sentiment'
     try:
         global review
         review = request.form['review']
-        print(review)
+        #print(review)
 
         if review:
             return redirect(url_for('submit'), code=307)
@@ -87,7 +88,7 @@ def response():
                     'That was hard!', 'Wrong? Øv :(']
             gb_feed = secrets.choice(bad_list)
                 
-        feedback = ('Your response was be used to retrain the model')
+        feedback = ('Your response was used to retrain the model')
 
         # Populate our DataBase
         if (user_response == 'yes' and pos_proba >.5):

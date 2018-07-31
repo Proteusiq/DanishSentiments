@@ -1,5 +1,10 @@
 '''
-TODO: Notes on How everything works
+Main Application: All routes are from views.py
+views.py should only contain functions as we have 
+a circular imports, app -> view -> app
+db initialized and used in storage.py and views
+run <python db_admin create> to create the table,
+if not yet created 
 '''
 
 from flask import Flask
