@@ -105,7 +105,7 @@ venv.bak/
 
 # Don't include pickled files
 
-*.pkl
+#*.pkl
 # Ignore checkpoints
 /notebook/*checkpoints/*
 
