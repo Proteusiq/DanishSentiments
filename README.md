@@ -43,7 +43,7 @@ You can train the SGDClassifier by navigating to flask_app folder and run.
 cd flask_app
 python db_admin.py train
 ```
-This will train a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification). Model score: 92%. Training takes less than 6 minutes on Windows 10, 64bit 16GB RAM.
+The script will wait for Return Key to execute the code. When Return Key is registered, a simple [Stochastic Gradient Descent Classifier](http://scikit-learn.org/stable/modules/sgd.html#classification) would be train. Model score: 92%. Training takes less than 6 minutes on Windows 10, 64bit 16GB RAM.
  
 
 Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
