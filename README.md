@@ -14,9 +14,9 @@ pip install --user pipenv
 ```
 add pipenv to your path: e.g on Windows, you would do
 ```
-SETX PATH "%PATH%;%APPDATA%\python\python36\scripts"
+SETX PATH "%PATH%;%USERPROFILE%\AppData\Local\python\python36\scripts"
 ```
-restart the terminal. 
+restart terminal. 
 
 Clone this repository, and enter the project folder. Execute _pipenv install_ to install all packages.
 
@@ -29,7 +29,16 @@ pipenv shell
 ```
 
 ## Model Training & Deployment
-In order to run the flask_app, you need to train the SGDClassifier by navigating to flask_app folder and run.
+To run the app, naviage to flask_app. and execute:
+
+```bash
+cd flask_app
+python app.py
+```
+
+You are good to go :) Flask app should be running on port 5000. On your browser, head to localhost:5000.
+
+You can train the SGDClassifier by navigating to flask_app folder and run.
 ```bash
 cd flask_app
 python db_admin.py train
@@ -40,15 +49,9 @@ This will train a simple [Stochastic Gradient Descent Classifier](http://scikit-
 Training data came from TrustPilot Reviews. I wrote a simple helper function [TrustPilotReader](https://github.com/Proteusiq/TrustPilotReader), in case you want more training data or wish to train a different language model, e.g. Norwegian Sentiment Model :).
 
 
-If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been generated and will be used by our flask apps.
+If everything went well, _HashVectorizer.pkl_ and _SGDClassifier.pkl_ would have been modified.
 
-On your shell terminal: Execute:
-
-```bash
-python app.py
-```
-
-You are good to go :) Flask app should be running on port 5000. On your browser, head to localhost:5000.
+This model updates itself as users affirm or disaffirm the predictions. Database of users inputs stores new features and targets that can be used to train another model or bulk retratining :)
 
 **NB:**This project is under development. To get current version, use:
 
