@@ -24,11 +24,11 @@ def home():
     header = 'A Toy Danish Sentiment Analysis'
     contents ='Write or paste a review and lets attempt to computes its sentiment'
     try:
-        global review
-        review = request.form['review']
+       
+        home.review = request.form['review']
         #print(review)
 
-        if review:
+        if home.review:
             return redirect(url_for('submit'), code=307)
         else:
             
@@ -44,21 +44,21 @@ def home():
 
 @app.route('/submit', methods=['POST','GET'])
 def submit():
-    global pos_proba, neg_proba, X #Used in Response for ReTraining
+     
     if request.method == 'POST':
         try:
-            X = hash_vec.transform([review])
-            y = clf.predict_proba(X)
+            submit.X = hash_vec.transform([home.review])
+            y = clf.predict_proba(submit.X)
 
-            neg_proba,pos_proba = y[0][0],y[0][1]
+            submit.neg_proba,submit.pos_proba = y[0][0],y[0][1]
 
-            if pos_proba > .5:
-                message = f'Positive: With {pos_proba:.1%} Probability'
+            if submit.pos_proba > .5:
+                message = f'Positive: With {submit.pos_proba:.1%} Probability'
             else:
-                message = f'Negative: With {neg_proba:.1%} Probability'
+                message = f'Negative: With {submit.neg_proba:.1%} Probability'
 
             return render_template('result.html',header='Sentiment Message:', 
-                                    contents=review,in_response=message)
+                                    contents=home.review,in_response=message)
         except (NameError):
             #There is no text so redirect to home
             #Go to else part
@@ -91,26 +91,26 @@ def response():
         feedback = ('Your response was used to retrain the model')
 
         # Populate our DataBase
-        if (user_response == 'yes' and pos_proba >.5):
+        if (user_response == 'yes' and submit.pos_proba >.5):
             target = 1
-        elif (user_response == 'yes' and neg_proba >.5):
+        elif (user_response == 'yes' and submit.neg_proba >.5):
             target = 0
-        elif (user_response == 'no' and pos_proba >.5):
+        elif (user_response == 'no' and submit.pos_proba >.5):
             target = 0
-        elif (user_response == 'no' and neg_proba >.5):
+        elif (user_response == 'no' and submit.neg_proba >.5):
             target = 1
         else:
             print('Something went wrong')
             target = None
         # We can gather data for a bulk retrain or simply retrain
         # for Bulk return, we need to gather data
-        content_to_db = UserFeedBack(features=review,target=target)    
+        content_to_db = UserFeedBack(features=home.review,target=target)    
         db.session.add(content_to_db)
         db.session.commit()
 
         # For on-spot retrain
         print('model re-training')
-        clf.partial_fit(X,[target], sample_weight=[100]) # Rapid learning
+        clf.partial_fit(submit.X,[target], sample_weight=[100]) # Rapid learning
         joblib.dump(clf,'../SGDclassifier.pkl')
         
 
