@@ -24,7 +24,8 @@ def home():
     header = 'A Toy Danish Sentiment Analysis'
     contents ='Write or paste a review and lets attempt to computes its sentiment'
     try:
-       
+       # instead of using global X, we will use functionName.X.
+       #Using global or funcName.X is not a good practive as it makes code maintance difficult
         home.review = request.form['review']
         #print(review)
 
