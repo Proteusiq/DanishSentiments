@@ -10,13 +10,8 @@ This project is far from being done (mostly the flask apps). It is intended for 
 
 Make sure you have pipenv. If you do not, you can get it via pip install (pip --version has to be >= 9.0.1).
 ```bash
-pip install --user pipenv
+pip install pipenv
 ```
-add pipenv to your path: e.g on Windows, you would do
-```
-SETX PATH "%PATH%;%USERPROFILE%\AppData\Local\python\python36\scripts"
-```
-restart terminal. 
 
 Clone this repository, and enter the project folder. Execute _pipenv install_ to install all packages.
 
