@@ -222,3 +222,20 @@ def show_diagram(trained_clf, X_train, y_train, X_test, y_test, compare_test=Tru
     plt.title('{}'.format(title))
     plt.legend(loc="lower right")
     plt.show()
+    
+    
+def persist_model(name,clf=None, method='load'):
+    'Pass in the file name, object to be saved or loaded'
+    
+    if method == 'load':
+        with open(name,'rb') as f:
+            return dill.load(f)
+    elif method == 'save':
+        print(f'Persisting {name} ...')
+        if clf is None:
+            raise ValueError('Pass Model/Pipeline/Transformation')
+        with open(name,'wb') as f:
+            dill.dump(clf,f)
+            print(f'Done.')
+    else:
+        raise ValeuError('Wrong arguments')
