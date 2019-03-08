@@ -3,7 +3,12 @@
         <form method="get" action="{{ url_for('response') }}">
             <div class="form-group">
                 <label for="Review">Scored</label>
-                <p><h4>{{in_response}}</h4></p>
+                    {% if 'Positive' in in_response %}
+                        <p><h4><font color="green">{{in_response}}</font></h4></p>
+                    {% else %}
+                    <p><h4><font color="red">{{in_response}}</font></h4></p>
+                    {% endif %}
+                
                 <small class="form-text text-muted">Did we get it right?.</small>
             </div>
             <button type="submit" class="btn btn-primary" name="response_button" value="yes">Yes</button>
