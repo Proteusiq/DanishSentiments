@@ -208,7 +208,7 @@ def show_diagram(trained_clf, X_train, y_train, X_test, y_test, compare_test=Tru
         fpr,tpr,_ = roc_curve(j[1], y_pred_prob) # remember we need binary
 
         plt.plot(fpr,tpr,lw=4, 
-                 color=j[2], label='{} ROC curve (area ={:.2f})'.format(j[3], clf_score))
+                 color=j[2], label='{} ROC curve (area ={:.2f})'.format(j[3], clf_score));
         
         if not compare_test:
             break
