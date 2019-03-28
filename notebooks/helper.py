@@ -3,8 +3,12 @@ import re
 from datetime import datetime
 import humanfriendly
 
+import dill
+
 # For our ML
 from sklearn.base import TransformerMixin
+
+dill.settings['recurse'] = True
 
 def time_me(function):
     '''
@@ -239,3 +243,14 @@ def persist_model(name,clf=None, method='load'):
             print(f'Done.')
     else:
         raise ValeuError('Wrong arguments')
+        
+        
+def text_seque(in_text:list):
+    '''
+    takes in in_text as a list of sentences
+    '''
+    return pad_sequences(
+            tokenizer.texts_to_sequences(
+                pd.DataFrame({'text':in_text}).text),
+                    maxlen=300)
+    
