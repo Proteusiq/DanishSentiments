@@ -11,7 +11,8 @@ def model_train():
     import pandas as pd
     import numpy as np
 
-    from sklearn.externals import joblib
+    # from sklearn.externals import joblib
+    import joblib
     from sklearn.model_selection import train_test_split
     from sklearn.feature_extraction.text import HashingVectorizer
     from sklearn.linear_model import SGDClassifier

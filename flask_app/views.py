@@ -1,7 +1,7 @@
 import sys
 import secrets
-from sklearn.externals import joblib
-
+#from sklearn.externals import joblib
+import joblib
 # To get app.py initialization of Flask
 from app import app,db
 from storage import UserFeedBack

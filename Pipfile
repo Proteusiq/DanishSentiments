@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 scikit-learn = "*"
 pandas = "*"
-pystemmer = "*"
+nltk = "*"
 jupyter = "*"
 seaborn = "*"
 requests = "*"
@@ -14,6 +14,8 @@ humanfriendly = "*"
 flask = "*"
 wtforms = "*"
 flask-sqlalchemy = "*"
+joblib = "*"
+dill = "*"
 
 [dev-packages]
 

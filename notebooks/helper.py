@@ -2,6 +2,7 @@ import re
 # For our Timer decorator
 from datetime import datetime
 import humanfriendly
+from nltk.stem.snowball import DanishStemmer
 
 import dill
 
@@ -95,13 +96,13 @@ class DanishCleaner(TransformerMixin):
 
 # Our Tokenizer
 
+
 def token(X, 
          words_only=False,word_normalize=True,
          emoji_normalize=True,remove_digits=True,
-          lower_case=True,stop_words = None):
+         lower_case=True,stop_words = None):
         '''
         requires Stemming if word_normalize = True
-        use pip[env] install stemming 
         '''
         
         # eyes [nose] mouth | mouth [nose] eyes pattern
@@ -129,15 +130,10 @@ def token(X,
             clean_text = clean_text.lower()
         
         if word_normalize:
-            try:
-                import Stemmer
-                stemmer = Stemmer.Stemmer('danish')
-                clean_text = ' '.join(stemmer.stemWords(clean_text.split()))
-            except ModuleNotFoundError:
-                print('Stemmer is not found. Try "pip install pystemmer"')
-                print('Words not normalize')
-                pass #Continue with issue
+            stemmer = DanishStemmer()
             
+            clean_text = ' '.join(stemmer.stem(word) for word in clean_text.split())
+        
         
         if stop_words:
             
