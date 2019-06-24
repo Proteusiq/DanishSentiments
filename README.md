@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/14926709/43322711-be0344a6-91af-11e8-83ca-2aa47ab5700f.png)
+![image](images/sentiment_app.png)
 
 # Building Danish Sentiment Models
 To view a production-ready application, and better coding(less python beginner friendly) see: [GitHub: dksentimentapi](https://github.com/Proteusiq/dksentimentapi)
