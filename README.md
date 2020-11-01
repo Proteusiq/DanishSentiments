@@ -1,7 +1,7 @@
 ![image](images/sentiment_app.png)
 
 # Building Danish Sentiment Models
-To view a production-ready application, and better coding(less python beginner friendly) see: [GitHub: dksentimentapi](https://github.com/Proteusiq/dksentimentapi)
+This repo is intended for beginners in Python and ML. To view a production-ready application, and better coding see: [GitHub: hisia](https://github.com/Proteusiq/hisia)
 
 Couple of talks used this repo as a demo. 
 - [PyData CPH](https://www.meetup.com/PyData-Copenhagen/): Talk on Building and Deploying Danish Sentiment Model (26-07-2018) at GiG
